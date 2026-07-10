@@ -8,3 +8,5 @@ export * from "./gmail/archive";
 export * from "./gmail/trash";
 export * from "./gmail/labels";
 export * from "./gmail/attachments";
+export * from "./gmail/create-label"
+export * from "./gmail/labels"

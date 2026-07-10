@@ -15,7 +15,6 @@ import "./tools/unstar-email";
 import "./tools/list-labels";
 import "./tools/create-label";
 
-
 const transport = new StdioServerTransport();
 
 await server.connect(transport);

@@ -2,8 +2,8 @@ import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { google } from "googleapis";
 
-const credentialsPath = fileURLToPath(new URL("../../credentials.json", import.meta.url));
-const tokensPath = fileURLToPath(new URL("../../tokens.json", import.meta.url));
+const credentialsPath = fileURLToPath(new URL("../auth/credentials.json", import.meta.url));
+const tokensPath = fileURLToPath(new URL("../auth/tokens.json", import.meta.url));
 
 const credentials = JSON.parse(await readFile(credentialsPath, "utf8"));
 

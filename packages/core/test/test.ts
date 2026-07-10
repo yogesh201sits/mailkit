@@ -1,7 +1,7 @@
-import { listEmails } from "./gmail/list";
-import { readEmail } from "./gmail/read";
-import { searchEmails } from "./gmail/search";
-import { sendEmail } from "./gmail/send";
+import { listEmails } from "../gmail/list";
+import { readEmail } from "../gmail/read";
+import { searchEmails } from "../gmail/search";
+import { sendEmail } from "../gmail/send";
 
 console.log("=== 1. LIST EMAILS ===");
 

@@ -1,13 +1,13 @@
 {
-    "name": "mailkit",
-    "version": "0.0.0",
-    "private": true,
-    "type": "module",
-    "dependencies": {
-        "commander": "^15.0.0",
-        "googleapis": "^173.0.0"
-    },
-    "devDependencies": {
-        "@types/node": "^26.1.1"
-    }
+  "name": "@mailkit/cli",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@mailkit/core": "workspace:*",
+    "commander": "^15.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1"
+  }
 }

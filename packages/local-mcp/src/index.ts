@@ -12,6 +12,9 @@ import "./tools/mark-as-read";
 import "./tools/mark-as-unread";
 import "./tools/star-email";
 import "./tools/unstar-email";
+import "./tools/list-labels";
+import "./tools/create-label";
+
 
 const transport = new StdioServerTransport();
 

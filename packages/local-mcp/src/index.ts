@@ -3,6 +3,7 @@ import { server } from "./server";
 // Register tools
 import "./tools/list-emails";
 import "./tools/read-email";
+import "./tools/search-emails";
 
 const transport = new StdioServerTransport();
 

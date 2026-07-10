@@ -2,7 +2,7 @@
     "name": "mailkit-worksapce",
     "private": true,
     "type": "module",
-    "workspaces": ["packages/*"],
+    "workspaces": ["apps/*","packages/*"],
     "devDependencies": {
         "@modelcontextprotocol/inspector": "^0.22.0",
         "@types/node": "^26.1.1"

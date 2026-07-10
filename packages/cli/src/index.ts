@@ -3,9 +3,8 @@ import { listEmails } from "@mailkit/core";
 
 const program = new Command();
 
-// program.name("mailkit").description("MailKit CLI");
-
 program
+  .name("mailkit").description("MailKit CLI")
   .command("emails")
   .description("List recent emails from Gmail")
   .option("-n, --max-results <count>", "Number of emails to fetch", "5")

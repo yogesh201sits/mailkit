@@ -9,6 +9,7 @@ import "./tools/reply-email";
 import "./tools/archive-email";
 import "./tools/trash-email";
 import "./tools/mark-as-read";
+import "./tools/mark-as-unread"
 
 const transport = new StdioServerTransport();
 

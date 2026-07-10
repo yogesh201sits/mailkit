@@ -9,6 +9,15 @@
         "@types/node": "^26.1.1",
       },
     },
+    "apps/remote-mcp": {
+      "name": "@mailkit/mcp-remote",
+      "version": "0.0.0",
+      "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.29.0",
+        "hono": "^4.12.29",
+        "zod": "^4.4.3",
+      },
+    },
     "packages/cli": {
       "name": "@mailkit/cli",
       "version": "0.0.0",
@@ -63,6 +72,8 @@
     "@mailkit/core": ["@mailkit/core@workspace:packages/core"],
 
     "@mailkit/mcp-local": ["@mailkit/mcp-local@workspace:packages/local-mcp"],
+
+    "@mailkit/mcp-remote": ["@mailkit/mcp-remote@workspace:apps/remote-mcp"],
 
     "@mcp-ui/client": ["@mcp-ui/client@6.1.1", "", { "dependencies": { "@modelcontextprotocol/ext-apps": "^1.2.0", "@modelcontextprotocol/sdk": "^1.27.1", "zod": "^3.23.8" }, "peerDependencies": { "react": "^18 || ^19", "react-dom": "^18 || ^19" } }, "sha512-kN5io7ouEpVfOTloEEGrnuWio3ZzYOVgTk4o8ULleACdKEw7VgOTozPl9aj9qVl/UBh7rXlvKH0JbBm6Tw52LQ=="],
 

@@ -7,7 +7,8 @@ import "./tools/search-emails";
 import "./tools/send-email";
 import "./tools/reply-email";
 import "./tools/archive-email";
-import "./tools/trash-email"
+import "./tools/trash-email";
+import "./tools/mark-as-read";
 
 const transport = new StdioServerTransport();
 

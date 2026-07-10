@@ -1,4 +1,4 @@
-import { gmail } from "./client";
+import { createGmailError, gmail } from "./client";
 
 interface AttachmentInfo {
   filename: string;
@@ -6,7 +6,6 @@ interface AttachmentInfo {
   attachmentId: string;
   size: number;
 }
-
 
 function findAttachments(
   parts: any[] = []
@@ -36,35 +35,41 @@ function findAttachments(
   return attachments;
 }
 
-
 export async function listAttachments(
   messageId: string
 ) {
-  const res = await gmail.users.messages.get({
-    userId: "me",
-    id: messageId,
-    format: "full",
-  });
+  try {
+    const res = await gmail.users.messages.get({
+      userId: "me",
+      id: messageId,
+      format: "full",
+    });
 
-  return findAttachments(
-    res.data.payload?.parts ?? []
-  );
+    return findAttachments(
+      res.data.payload?.parts ?? []
+    );
+  } catch (error) {
+    throw createGmailError("listing attachments", error);
+  }
 }
-
 
 export async function downloadAttachment(
   messageId: string,
   attachmentId: string
 ) {
-  const res =
-    await gmail.users.messages.attachments.get({
-      userId: "me",
-      messageId,
-      id: attachmentId,
-    });
+  try {
+    const res =
+      await gmail.users.messages.attachments.get({
+        userId: "me",
+        messageId,
+        id: attachmentId,
+      });
 
-  return Buffer.from(
-    res.data.data!,
-    "base64"
-  );
+    return Buffer.from(
+      res.data.data!,
+      "base64"
+    );
+  } catch (error) {
+    throw createGmailError("downloading attachment", error);
+  }
 }

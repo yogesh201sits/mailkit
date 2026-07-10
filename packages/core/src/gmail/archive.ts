@@ -1,13 +1,17 @@
-import { gmail } from "./client";
+import { createGmailError, gmail } from "./client";
 
 export async function archiveEmail(id: string) {
-  const res = await gmail.users.messages.modify({
-    userId: "me",
-    id,
-    requestBody: {
-      removeLabelIds: ["INBOX"],
-    },
-  });
+  try {
+    const res = await gmail.users.messages.modify({
+      userId: "me",
+      id,
+      requestBody: {
+        removeLabelIds: ["INBOX"],
+      },
+    });
 
-  return res.data;
+    return res.data;
+  } catch (error) {
+    throw createGmailError("archiving email", error);
+  }
 }

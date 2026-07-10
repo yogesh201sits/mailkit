@@ -1,4 +1,4 @@
-import { gmail } from "./client";
+import { createGmailError, gmail } from "./client";
 
 interface ReplyEmailOptions {
   threadId: string;
@@ -15,30 +15,34 @@ export async function replyEmail({
   subject,
   body,
 }: ReplyEmailOptions) {
-  const message = [
-    `To: ${to}`,
-    `Subject: Re: ${subject}`,
-    `In-Reply-To: ${messageId}`,
-    `References: ${messageId}`,
-    "Content-Type: text/plain; charset=utf-8",
-    "MIME-Version: 1.0",
-    "",
-    body,
-  ].join("\r\n");
+  try {
+    const message = [
+      `To: ${to}`,
+      `Subject: Re: ${subject}`,
+      `In-Reply-To: ${messageId}`,
+      `References: ${messageId}`,
+      "Content-Type: text/plain; charset=utf-8",
+      "MIME-Version: 1.0",
+      "",
+      body,
+    ].join("\r\n");
 
-  const encodedMessage = Buffer.from(message)
-    .toString("base64")
-    .replace(/\+/g, "-")
-    .replace(/\//g, "_")
-    .replace(/=+$/, "");
+    const encodedMessage = Buffer.from(message)
+      .toString("base64")
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=+$/, "");
 
-  const res = await gmail.users.messages.send({
-    userId: "me",
-    requestBody: {
-      raw: encodedMessage,
-      threadId,
-    },
-  });
+    const res = await gmail.users.messages.send({
+      userId: "me",
+      requestBody: {
+        raw: encodedMessage,
+        threadId,
+      },
+    });
 
-  return res.data;
+    return res.data;
+  } catch (error) {
+    throw createGmailError("replying to email", error);
+  }
 }

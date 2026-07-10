@@ -1,10 +1,14 @@
-import { gmail } from "./client";
+import { createGmailError, gmail } from "./client";
 
 export async function trashEmail(id: string) {
-  const res = await gmail.users.messages.trash({
-    userId: "me",
-    id,
-  });
+  try {
+    const res = await gmail.users.messages.trash({
+      userId: "me",
+      id,
+    });
 
-  return res.data;
+    return res.data;
+  } catch (error) {
+    throw createGmailError("trashing email", error);
+  }
 }

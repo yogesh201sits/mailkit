@@ -44,7 +44,7 @@ The repository follows a layered architecture:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Bun** – Fast JavaScript runtime, package manager, and task runner.
 - **@modelcontextprotocol/sdk** – Official SDK for building Model Context Protocol (MCP) servers.

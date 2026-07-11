@@ -2,7 +2,7 @@
 <img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/3f9afff1-1091-4429-a952-83b507596040" />
 
 
-MailKit is an open-source Gmail toolkit built around a shared core library.
+MailKit is an open-source Gmail MCP toolkit built around a shared core library.
 
 The project provides multiple ways to interact with Gmail:
 

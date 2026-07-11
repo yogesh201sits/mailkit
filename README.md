@@ -34,13 +34,22 @@ All applications share the same core Gmail implementation, making MailKit easy t
                          |      Gmail API       |
                          +----------------------+
 ```
-<img width="1400" height="920" alt="image" src="https://github.com/user-attachments/assets/08ee86e4-5193-4b52-bbcf-14bba38b93e4" />
+<img width="500" height="320" alt="image" src="https://github.com/user-attachments/assets/08ee86e4-5193-4b52-bbcf-14bba38b93e4" />
 
 The repository follows a layered architecture:
 
 * **Applications** expose MailKit through different interfaces.
 * **Core** contains reusable Gmail business logic.
 * Every application depends on the same shared core.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Bun** – Fast JavaScript runtime, package manager, and task runner.
+- **@modelcontextprotocol/sdk** – Official SDK for building Model Context Protocol (MCP) servers.
+- **@modelcontextprotocol/inspector** – Tool for testing, debugging, and inspecting MCP servers during development.
+- **Zod** – Type-safe schema validation for tool inputs and outputs.
 
 ---
 

@@ -1,5 +1,6 @@
 import { Hono } from "hono";
-import { WebStandardStreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/webStandardStreamableHttp";
+import { WebStandardStreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js";
+
 import { server } from "./server";
 
 // Register tools
@@ -22,16 +23,19 @@ import "./tools/download-attachment";
 const app = new Hono();
 
 app.all("/mcp", async (c) => {
-  
-  const transport = new WebStandardStreamableHTTPServerTransport({
-    sessionIdGenerator: undefined,
-    enableJsonResponse: true,
-  });
+  try {
+    const transport = new WebStandardStreamableHTTPServerTransport({
+      sessionIdGenerator: undefined,
+      enableJsonResponse: true,
+    });
 
-  await server.connect(transport);
+    await server.connect(transport);
 
-  return transport.handleRequest(c.req.raw);
-
+    return transport.handleRequest(c.req.raw);
+  } catch (err) {
+    console.error(err);
+    return c.text(String(err), 500);
+  }
 });
 
 export default app;

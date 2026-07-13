@@ -1,6 +1,17 @@
-# MailKit 
-<img width="250" height="250" alt="image" src="https://github.com/user-attachments/assets/3f9afff1-1091-4429-a952-83b507596040" />
+<div align="center">
 
+# MailKit
+
+<img width="250" height="250" alt="MailKit logo" src="https://github.com/user-attachments/assets/3f9afff1-1091-4429-a952-83b507596040" />
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Built with Bun](https://img.shields.io/badge/Built%20with-Bun-000000?logo=bun&logoColor=white)](https://bun.sh)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![MCP](https://img.shields.io/badge/Protocol-MCP-blueviolet)](https://modelcontextprotocol.io/)
+[![Gmail API](https://img.shields.io/badge/Gmail-API-EA4335?logo=gmail&logoColor=white)](https://developers.google.com/gmail/api)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+</div>
 
 MailKit is an open-source Gmail MCP toolkit built around a shared core library.
 
@@ -46,10 +57,17 @@ The repository follows a layered architecture:
 
 ## Tech Stack
 
-- **Bun** – Fast JavaScript runtime, package manager, and task runner.
-- **@modelcontextprotocol/sdk** – Official SDK for building Model Context Protocol (MCP) servers.
-- **@modelcontextprotocol/inspector** – Tool for testing, debugging, and inspecting MCP servers during development.
-- **Zod** – Type-safe schema validation for tool inputs and outputs.
+| Category         | Badge | Purpose                                                        |
+| ----------------- | ----- | ---------------------------------------------------------------- |
+| Runtime            | [![Bun](https://img.shields.io/badge/Bun-000000?logo=bun&logoColor=white)](https://bun.sh) | Fast JavaScript runtime, package manager, and task runner. |
+| Language           | [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/) | Static typing across core, CLI, and MCP server packages. |
+| Protocol           | [![MCP](https://img.shields.io/badge/Protocol-MCP-blueviolet)](https://modelcontextprotocol.io/) | Standard protocol powering the Local and Remote MCP servers. |
+| MCP SDK            | [![MCP SDK](https://img.shields.io/badge/%40modelcontextprotocol%2Fsdk-000000?logo=npm&logoColor=white)](https://www.npmjs.com/package/@modelcontextprotocol/sdk) | Official SDK for building MCP servers. |
+| MCP Debugging      | [![MCP Inspector](https://img.shields.io/badge/MCP-Inspector-6E56CF)](https://github.com/modelcontextprotocol/inspector) | Tool for testing, debugging, and inspecting MCP servers during development. |
+| CLI Framework      | [![Commander](https://img.shields.io/badge/Commander-CLI-blue?logo=gnu-bash&logoColor=white)](https://www.npmjs.com/package/commander) | Parses commands and flags for the MailKit CLI. |
+| Validation         | [![Zod](https://img.shields.io/badge/Zod-3E67B1?logo=zod&logoColor=white)](https://zod.dev/) | Type-safe schema validation for tool inputs and outputs. |
+| HTTP Server        | [![Hono](https://img.shields.io/badge/Hono-E36002?logo=hono&logoColor=white)](https://hono.dev/) | Lightweight web framework powering the Remote MCP server. |
+| Email Provider     | [![Gmail API](https://img.shields.io/badge/Gmail-API-EA4335?logo=gmail&logoColor=white)](https://developers.google.com/gmail/api) | Core email, label, and attachment operations. |
 
 ---
 
